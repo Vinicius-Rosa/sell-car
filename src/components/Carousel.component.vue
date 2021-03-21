@@ -9,12 +9,14 @@
       </span>
 
       <p class="from-left">{{ list[current].description }}</p>
+      <!-- <button class="buy-now from-left">
+        <span>Compre já!</span>
+      </button> -->
+      <Button id="buy-now" classname="from-left" text="Compre já" />
     </div>
 
-    <!-- <CarouselItem :item="list[current]" /> -->
-
     <div
-      class="carousel_img from-right"
+      class="carousel_img from-blur"
       :style="{
         backgroundImage: 'url(' + list[current].imgUrl + ')',
       }"
@@ -39,11 +41,11 @@
 
 <script>
 import carouselList from "../data/carouselList";
-// import CarouselItem from "./CarouselItem.component";
+import Button from "../components/Button.component";
 
 export default {
   name: "Carousel",
-  // components: { CarouselItem },
+  components: { Button },
   data() {
     return {
       list: carouselList || [],
@@ -81,24 +83,28 @@ export default {
     },
 
     removeAnimation() {
+      const button = document.querySelector("#buy-now");
       const img = document.querySelector(".carousel_img");
       const span = document.querySelector(".carousel_content-price");
       const h1 = document.querySelector("h1");
       const p = document.querySelector("p");
 
-      img.classList.remove("from-right");
+      img.classList.remove("from-blur");
+      button.classList.remove("from-left");
       span.classList.remove("from-left");
       h1.classList.remove("from-left");
       p.classList.remove("from-left");
     },
 
     animate() {
+      const button = document.querySelector("#buy-now");
       const img = document.querySelector(".carousel_img");
       const span = document.querySelector(".carousel_content-price");
       const h1 = document.querySelector("h1");
       const p = document.querySelector("p");
 
-      img.classList.add("from-right");
+      img.classList.add("from-blur");
+      button.classList.add("from-left");
       span.classList.add("from-left");
       h1.classList.add("from-left");
       p.classList.add("from-left");
@@ -116,7 +122,7 @@ export default {
 
 .page-title {
   position: absolute;
-  top: 150px;
+  top: 100px;
 
   font-weight: 300;
   font-size: 1.2rem;
@@ -131,7 +137,7 @@ export default {
 }
 
 .carousel_content {
-  position: fixed;
+  position: absolute;
   left: 0;
 
   max-width: 40%;
@@ -148,7 +154,8 @@ export default {
 }
 
 .carousel_content h1 {
-  font-size: 6rem;
+  text-align: initial;
+  font-size: 5.6rem;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -228,11 +235,11 @@ export default {
   animation: from-left 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
-.from-right {
-  animation: from-right 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+.from-blur {
+  animation: from-blur 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
-@keyframes from-right {
+@keyframes from-blur {
   0% {
     filter: blur(40px);
     opacity: 0;

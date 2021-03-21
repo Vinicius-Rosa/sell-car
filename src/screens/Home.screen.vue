@@ -1,88 +1,100 @@
 <template>
-  <Fragment>
-    <header>
-      <div class="header_logo-img">
-        <img src="../assets/logo.png" alt="" />
-      </div>
-
-      <nav>
-        <ul>
-          <li>
-            <button>Início</button>
-          </li>
-          <li>
-            <button>Buscar</button>
-          </li>
-          <li>
-            <button>Sobre</button>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
+  <div data-type="fragment">
     <Carousel />
-  </Fragment>
+    <Gap />
+    <section id="what-we-do">
+      <div class="content">
+        <h1>O carro perfeito pra você!</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
+          recusandae nam ullam officiis eum amet itaque nesciunt, non sint!
+          Tenetur dicta rerum fugiat animi illo reiciendis itaque cum laboriosam
+          voluptas!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
+          recusandae nam ullam officiis eum amet itaque nesciunt, non sint!
+          Tenetur dicta rerum fugiat animi illo reiciendis itaque cum laboriosam
+          voluptas!
+        </p>
+        <Button
+          classname="see-more"
+          text="Ver mais"
+          :onclick="() => seeMore()"
+        />
+      </div>
+      <div class="img-container">
+        <img :src="vehicle" alt="" />
+      </div>
+    </section>
+    <Gap />
+  </div>
 </template>
 
 <script>
-import { Fragment } from "vue-fragment";
-import { Carousel } from "../components";
+import { Carousel, Gap, Button } from "../components";
+import { vehicle } from "@/assets/cars";
 
 export default {
   name: "Home",
-  components: { Fragment, Carousel },
+  data() {
+    return {
+      vehicle: vehicle || "",
+    };
+  },
+
+  methods: {
+    seeMore() {
+      this.$router.push("/search");
+    },
+  },
+  components: { Carousel, Gap, Button },
 };
 </script>
 
 <style scoped>
-header {
-  position: fixed;
-
+#what-we-do {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 
-  width: 100%;
-  height: 80px;
-  padding: 0 100px;
-
-  background-color: transparent;
-  color: #fff;
-  z-index: 5;
-}
-
-.header_logo-img img {
-  max-height: 40px;
-}
-
-nav ul {
-  font-size: 1.2rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 30px;
-}
-
-nav ul li button {
-  position: relative;
-  cursor: pointer;
-}
-
-nav ul li button::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-
-  height: 2px;
-  width: 0;
-  background-color: #fff;
-
-  transition: 0.4s;
-}
-
-nav ul li button:hover::before {
+  min-width: 480px;
   width: 80%;
+
+  padding: 50px;
+  margin: 0 auto;
+
+  background-color: #fff;
+  color: #000;
+
+  text-align: initial;
+}
+
+.content {
+  width: 40%;
+  max-width: 500px;
+}
+
+.content h1 {
+  font-size: 3.2rem;
+  line-height: 4rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.content p {
+  line-height: 1.5rem;
+}
+
+.content p:first-of-type {
+  margin-bottom: 15px;
+}
+
+.img-container img {
+  max-width: 700px;
+}
+
+.see-more {
+  background-color: #000;
+  color: #fff;
 }
 </style>

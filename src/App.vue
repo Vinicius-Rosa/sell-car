@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <Home />
+    <Header />
+    <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
-import Home from "./screens/Home.screen.vue";
+import { Header, Footer } from "@/components";
 
 export default {
   name: "App",
-  components: { Home },
+  components: { Header, Footer },
 };
 </script>
+
 
 <style>
 @import url("global/styles/reset.css");
@@ -19,11 +22,11 @@ export default {
 #app {
   font-family: "Poppins", sans-serif;
   text-align: center;
-
   min-width: 100vw;
   min-height: 100vh;
-
   /* color: #595959; */
   color: #fff;
+
+  background: #d7af70;
 }
 </style>
