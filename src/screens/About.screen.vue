@@ -1,7 +1,68 @@
 <template>
-  <section id="container">
-    <h1>Sobre</h1>
-    <p>Opa! Bão?</p>
+  <section id="container" class="from-blur">
+    <h1>Sobre nós</h1>
+    <h2>Nosso compromisso é com você!</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ratione
+      iusto dolorem tenetur impedit nobis nesciunt ducimus, odit dicta minus
+      provident officiis repellendus labore accusamus harum, consectetur
+      assumenda perferendis numquam. Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Itaque ratione iusto dolorem tenetur impedit nobis
+      nesciunt ducimus, odit dicta minus provident officiis repellendus labore
+      accusamus harum, consectetur assumenda perferendis numquam.
+      <br />
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ratione
+      iusto dolorem tenetur impedit nobis nesciunt ducimus, odit dicta minus
+      provident officiis repellendus labore accusamus harum, consectetur
+      assumenda perferendis numquam. Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Itaque ratione iusto dolorem tenetur impedit nobis
+      nesciunt ducimus, odit dicta minus provident officiis repellendus labore
+      accusamus harum, consectetur assumenda perferendis numquam.
+    </p>
+
+    <div class="partners">
+      <div class="partner">
+        <div id="ceo" class="img" />
+        <div class="content">
+          <h3>Vinicius de Oliveira</h3>
+          <span>CEO</span>
+          <br />
+          <span class="description">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
+            iure maxime nemo incidunt recusandae cumque similique error veniam
+            reiciendis.
+          </span>
+        </div>
+      </div>
+
+      <div class="partner">
+        <div id="cto" class="img" />
+        <div class="content">
+          <h3>Vinicius Rosa</h3>
+          <span>CTO</span>
+          <br />
+          <span class="description">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
+            iure maxime nemo incidunt recusandae cumque similique error veniam
+            reiciendis.
+          </span>
+        </div>
+      </div>
+
+      <div class="partner">
+        <div id="product-designer" class="img" />
+        <div class="content">
+          <h3>Vini R. Rafael</h3>
+          <span>Product Designer</span>
+          <br />
+          <span class="description">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
+            iure maxime nemo incidunt recusandae cumque similique error veniam
+            reiciendis.
+          </span>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -13,15 +74,137 @@ export default {
 
 <style scoped>
 #container {
-  width: 100vw;
-  height: 100vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: blue;
+  padding: 100px 100px;
 
   z-index: 1000000;
+}
+
+h1 {
+  text-align: initial;
+  font-size: 5rem;
+
+  margin-left: 100px;
+}
+
+h2 {
+  text-align: initial;
+  margin-left: 105px;
+}
+
+p {
+  background-color: #fff;
+  color: #000;
+  padding: 50px;
+
+  width: calc(100% - 200px);
+  margin: 50px auto;
+
+  text-align: justify;
+  line-height: 1.5rem;
+}
+
+.partners {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 50px;
+
+  margin: 0 100px;
+}
+
+.partner {
+  display: flex;
+  flex: 1;
+  text-align: initial;
+
+  background-color: #fff;
+  color: #000;
+  padding: 50px;
+
+  min-width: 400px;
+  /* width: 100%; */
+}
+
+.partner h3 {
+  font-weight: bold;
+}
+
+.partners span {
+  color: #bbbbbb;
+}
+
+.partners .description {
+  display: block;
+  margin-top: 20px;
+}
+
+.partner .content {
+  margin-left: 20px;
+  max-width: 60%;
+}
+
+.img {
+  border-radius: 100px;
+  width: 120px;
+  height: 120px;
+}
+
+#ceo {
+  background: url("../assets/partners/partner3.jpeg");
+  background-size: cover;
+  background-position: top center;
+}
+
+#cto {
+  background: url("../assets/partners/partner1.jpg");
+  background-size: cover;
+  background-position: top center;
+}
+
+#product-designer {
+  background: url("../assets/partners/partner2.jpg");
+  background-size: cover;
+  background-position: top center;
+}
+
+/* ==================== ANIMATIONS ==================== */
+.from-blur {
+  animation: from-blur 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes from-blur {
+  0% {
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 850px) {
+  #container {
+    padding: 100px 0;
+  }
+
+  p {
+    margin: 50px;
+    width: calc(100% - 100px);
+  }
+
+  .partners {
+    margin: 0 50px;
+  }
+
+  h1 {
+    margin-left: 50px;
+  }
+
+  h2 {
+    margin-left: 55px;
+  }
 }
 </style>

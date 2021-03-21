@@ -1,7 +1,9 @@
 <template>
   <header>
     <div class="header_logo-img">
-      <img src="@/assets/logo.png" alt="" />
+      <router-link to="/">
+        <img src="@/assets/logo.png" alt="" />
+      </router-link>
     </div>
 
     <nav class="long-nav">
