@@ -1,7 +1,6 @@
 <template>
   <div data-type="fragment">
     <Carousel />
-    <Gap />
     <section id="what-we-do">
       <div class="content">
         <h1>O carro perfeito pra você!</h1>
@@ -27,12 +26,11 @@
         <img :src="vehicle" alt="" />
       </div>
     </section>
-    <Gap />
   </div>
 </template>
 
 <script>
-import { Carousel, Gap, Button } from "../components";
+import { Carousel, Button } from "../components";
 import { vehicle } from "@/assets/cars";
 
 export default {
@@ -48,7 +46,7 @@ export default {
       this.$router.push("/search");
     },
   },
-  components: { Carousel, Gap, Button },
+  components: { Carousel, Button },
 };
 </script>
 
@@ -56,12 +54,13 @@ export default {
 #what-we-do {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   min-width: 480px;
   width: 80%;
 
   padding: 50px;
-  margin: 0 auto;
+  margin: 50px auto;
 
   background-color: #fff;
   color: #000;
@@ -90,11 +89,54 @@ export default {
 }
 
 .img-container img {
+  width: 100%;
   max-width: 700px;
 }
 
 .see-more {
   background-color: #000;
   color: #fff;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 1200px) {
+  .img-container img {
+    max-width: 400px;
+  }
+
+  #what-we-do {
+    width: 100%;
+    margin: 0;
+  }
+
+  .img-container img {
+    margin: 0 50px;
+  }
+}
+
+@media (max-width: 850px) {
+  #what-we-do {
+    min-width: unset;
+    padding: 50px;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+  }
+
+  .content {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+
+    text-align: justify;
+  }
+
+  .img-container img {
+    margin: 0;
+    margin-top: 50px;
+  }
 }
 </style>

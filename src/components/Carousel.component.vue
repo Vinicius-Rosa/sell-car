@@ -8,10 +8,7 @@
         {{ list[current].price }}
       </span>
 
-      <p class="from-left">{{ list[current].description }}</p>
-      <!-- <button class="buy-now from-left">
-        <span>Compre já!</span>
-      </button> -->
+      <p class="description from-left">{{ list[current].description }}</p>
       <Button id="buy-now" classname="from-left" text="Compre já" />
     </div>
 
@@ -140,7 +137,8 @@ export default {
   position: absolute;
   left: 0;
 
-  max-width: 40%;
+  width: 40%;
+  min-width: 400px;
   height: 100%;
   padding: 100px;
 
@@ -155,7 +153,7 @@ export default {
 
 .carousel_content h1 {
   text-align: initial;
-  font-size: 5.6rem;
+  font-size: 5rem;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -169,6 +167,10 @@ export default {
 }
 
 .carousel_content p {
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+
   text-align: start;
   line-height: 1.5rem;
 }
@@ -254,14 +256,67 @@ export default {
   0% {
     transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
     transform-origin: 100% 50%;
-    /* filter: blur(40px); */
     opacity: 0;
   }
   100% {
     transform: translateX(0) scaleY(1) scaleX(1);
     transform-origin: 50% 50%;
-    /* filter: blur(0); */
     opacity: 1;
+  }
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 1200px) {
+  .carousel_content h1 {
+    font-size: 2.5rem;
+  }
+
+  .carousel_content {
+    padding: 100px 50px;
+  }
+}
+
+@media (max-width: 850px) {
+  #carousel {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .carousel_img {
+    height: 50vh;
+    width: 100vw;
+  }
+
+  .page-title {
+    position: absolute;
+    top: 25px;
+  }
+
+  .carousel_content {
+    position: relative;
+
+    width: 100%;
+    height: 50%;
+
+    padding: 50px;
+
+    background-color: rgb(0, 0, 0);
+  }
+
+  .carousel_buttons {
+    position: absolute;
+    right: 50px;
+    bottom: 25px;
+
+    display: flex;
+  }
+
+  .carousel_indicator {
+    display: none;
+  }
+
+  .carousel_content p {
+    max-height: 100px;
   }
 }
 </style>
