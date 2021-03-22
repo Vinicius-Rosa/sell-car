@@ -3,7 +3,7 @@ import { fusca, hyundai, ford, sl190, redCar } from '../assets/cars'
 export default [
     {
         id: 0,
-        title: "Fusca 1999",
+        title: "Fusca",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate eu eros at fermentum. Nullam efficitur diam a metus mattis rutrum. Quisque non orci dignissim velit tempor luctus. Nullam hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate eu eros at fermentum. Nullam efficitur diam a metus mattis rutrum. Quisque non orci dignissim velit tempor luctus. Nullam hendrerit.",
         price: "R$14,999",
         imgUrl: fusca

@@ -62,6 +62,12 @@ export default {
     window.removeEventListener("scroll", this.changeColor);
   },
 
+  watch: {
+    $route() {
+      this.isActive = false;
+    },
+  },
+
   methods: {
     toggleMenu() {
       this.isActive = !this.isActive;

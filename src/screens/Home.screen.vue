@@ -90,7 +90,8 @@ export default {
 
 .img-container img {
   width: 100%;
-  max-width: 700px;
+  max-width: 500px;
+  margin: 0 50px;
 }
 
 .see-more {

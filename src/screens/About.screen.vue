@@ -83,12 +83,12 @@ h1 {
   text-align: initial;
   font-size: 5rem;
 
-  margin-left: 100px;
+  /* margin-left: 50px; */
 }
 
 h2 {
   text-align: initial;
-  margin-left: 105px;
+  /* margin-left: 55px; */
 }
 
 p {
@@ -96,7 +96,8 @@ p {
   color: #000;
   padding: 50px;
 
-  width: calc(100% - 200px);
+  width: 100%;
+  /* calc(100% - 100px); */
   margin: 50px auto;
 
   text-align: justify;
@@ -111,7 +112,7 @@ p {
 
   gap: 50px;
 
-  margin: 0 100px;
+  margin: 0;
 }
 
 .partner {
@@ -185,26 +186,44 @@ p {
   }
 }
 
+@media (max-width: 1200px) {
+  #container {
+    padding: 100px 50px;
+  }
+}
+
 @media (max-width: 850px) {
   #container {
     padding: 100px 0;
   }
 
   p {
-    margin: 50px;
     width: calc(100% - 100px);
-  }
-
-  .partners {
-    margin: 0 50px;
   }
 
   h1 {
     margin-left: 50px;
+    font-size: 4rem;
   }
 
   h2 {
     margin-left: 55px;
+  }
+}
+
+@media (max-width: 500px) {
+  p {
+    padding: 25px;
+  }
+  .img {
+    border-radius: 100px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .partner {
+    padding: 25px;
+    min-width: 300px;
   }
 }
 </style>

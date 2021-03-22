@@ -175,6 +175,19 @@ export default {
   line-height: 1.5rem;
 }
 
+.description::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.description::-webkit-scrollbar {
+  width: 5px;
+  background-color: #000000;
+}
+
+.description::-webkit-scrollbar-thumb {
+  background-color: #f5f5f5;
+}
+
 .carousel_buttons {
   position: absolute;
   right: 100px;
