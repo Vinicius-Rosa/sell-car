@@ -49,7 +49,12 @@ export default {
       current: 0,
       prevText: "<",
       nextText: ">",
+      currentTime: 10,
     };
+  },
+
+  created() {
+    this.countDown();
   },
 
   methods: {
@@ -77,6 +82,21 @@ export default {
         this.current = value;
         this.animate();
       }, 50);
+    },
+
+    countDown() {
+      if (this.currentTime === 0) {
+        this.next();
+      }
+
+      if (this.currentTime > 0) {
+        setTimeout(() => {
+          this.currentTime--;
+          this.countDown();
+        }, 1000);
+      } else {
+        this.currentTime = 10;
+      }
     },
 
     removeAnimation() {
