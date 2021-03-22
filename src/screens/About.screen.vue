@@ -1,5 +1,5 @@
 <template>
-  <section id="container" class="from-blur">
+  <section id="about-container" class="from-blur">
     <h1>Sobre nós</h1>
     <h2>Nosso compromisso é com você!</h2>
     <p>
@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style scoped>
-#container {
+#about-container {
   padding: 100px 100px;
 
   z-index: 1000000;
@@ -82,13 +82,10 @@ export default {
 h1 {
   text-align: initial;
   font-size: 5rem;
-
-  /* margin-left: 50px; */
 }
 
 h2 {
   text-align: initial;
-  /* margin-left: 55px; */
 }
 
 p {
@@ -187,13 +184,13 @@ p {
 }
 
 @media (max-width: 1200px) {
-  #container {
+  #about-container {
     padding: 100px 50px;
   }
 }
 
 @media (max-width: 850px) {
-  #container {
+  #about-container {
     padding: 100px 0;
   }
 
