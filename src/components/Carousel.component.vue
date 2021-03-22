@@ -85,18 +85,10 @@ export default {
     },
 
     countDown() {
-      if (this.currentTime === 0) {
-        this.next();
-      }
-
-      if (this.currentTime > 0) {
-        setTimeout(() => {
-          this.currentTime--;
-          this.countDown();
-        }, 1000);
-      } else {
-        this.currentTime = 10;
-      }
+      setInterval(() => {
+        if (this.current === this.list.length - 1) this.setCurrent(0);
+        else this.next();
+      }, 10000);
     },
 
     removeAnimation() {
@@ -188,7 +180,7 @@ export default {
 
 .carousel_content p {
   width: 100%;
-  max-height: 300px;
+  max-height: 200px;
   overflow-y: auto;
 
   text-align: start;
