@@ -57,6 +57,10 @@ export default {
     this.countDown();
   },
 
+  beforeDestroy() {
+    clearInterval();
+  },
+
   methods: {
     prev() {
       if (this.current > 0) {
@@ -98,11 +102,13 @@ export default {
       const h1 = document.querySelector("h1");
       const p = document.querySelector("p");
 
-      img.classList.remove("from-blur");
-      button.classList.remove("from-left");
-      span.classList.remove("from-left");
-      h1.classList.remove("from-left");
-      p.classList.remove("from-left");
+      if (!!img && !!button && !!span && !!h1 && !!p) {
+        img.classList.remove("from-blur");
+        button.classList.remove("from-left");
+        span.classList.remove("from-left");
+        h1.classList.remove("from-left");
+        p.classList.remove("from-left");
+      }
     },
 
     animate() {
@@ -112,11 +118,13 @@ export default {
       const h1 = document.querySelector("h1");
       const p = document.querySelector("p");
 
-      img.classList.add("from-blur");
-      button.classList.add("from-left");
-      span.classList.add("from-left");
-      h1.classList.add("from-left");
-      p.classList.add("from-left");
+      if (!!img && !!button && !!span && !!h1 && !!p) {
+        img.classList.add("from-blur");
+        button.classList.add("from-left");
+        span.classList.add("from-left");
+        h1.classList.add("from-left");
+        p.classList.add("from-left");
+      }
     },
   },
 };
@@ -255,39 +263,6 @@ export default {
 .carousel_indicator-active {
   font-size: 3rem !important;
   color: #fff !important;
-}
-
-/* ==================== ANIMATIONS ==================== */
-.from-left {
-  animation: from-left 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
-}
-
-.from-blur {
-  animation: from-blur 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
-}
-
-@keyframes from-blur {
-  0% {
-    filter: blur(40px);
-    opacity: 0;
-  }
-  100% {
-    filter: blur(0);
-    opacity: 1;
-  }
-}
-
-@keyframes from-left {
-  0% {
-    transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
-    transform-origin: 100% 50%;
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0) scaleY(1) scaleX(1);
-    transform-origin: 50% 50%;
-    opacity: 1;
-  }
 }
 
 /* ================== RESPONSIVE ================== */

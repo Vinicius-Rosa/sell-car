@@ -167,22 +167,6 @@ p {
   background-position: top center;
 }
 
-/* ==================== ANIMATIONS ==================== */
-.from-blur {
-  animation: from-blur 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
-}
-
-@keyframes from-blur {
-  0% {
-    filter: blur(40px);
-    opacity: 0;
-  }
-  100% {
-    filter: blur(0);
-    opacity: 1;
-  }
-}
-
 @media (max-width: 1200px) {
   #about-container {
     padding: 100px 50px;

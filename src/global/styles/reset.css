@@ -59,6 +59,8 @@ button{
 
     background: transparent;
 
+    outline: none;
+
     /* inherit font & color from ancestor */
     color: inherit;
     font: inherit;
@@ -73,3 +75,7 @@ button{
     /* Corrects inability to style clickable `input` types in iOS */
     -webkit-appearance: none;
 }
+
+[hidden] {
+    display: none !important;
+  }

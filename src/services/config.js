@@ -6,13 +6,3 @@ export const http = axios.create({
         "Content-Type": "application/json"
     }
 })
-
-http.interceptors.response.use((response) => {
-    return response
-}, (error) => {
-    if (error.response.status === 401) {
-        window.location = '/'
-    }
-
-    return Promise.reject(error)
-})

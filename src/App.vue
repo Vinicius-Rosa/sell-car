@@ -18,6 +18,7 @@ export default {
 
 <style>
 @import url("global/styles/reset.css");
+@import url("global/styles/animations.css");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 #app {
   font-family: "Poppins", sans-serif;
