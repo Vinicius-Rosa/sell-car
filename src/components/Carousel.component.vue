@@ -2,14 +2,19 @@
   <section id="carousel">
     <div class="carousel_content">
       <span class="page-title">Início</span>
-      <h1 class="from-left">{{ list[current].title }}</h1>
+      <h1 class="title from-left">{{ list[current].title }}</h1>
 
       <span class="carousel_content-price from-left">
         {{ list[current].price }}
       </span>
 
       <p class="description from-left">{{ list[current].description }}</p>
-      <Button id="buy-now" classname="from-left" text="Compre já" />
+      <Button
+        id="buy-now"
+        classname="from-left"
+        text="Compre já"
+        :onclick="shouldShowForm"
+      />
     </div>
 
     <div
@@ -37,6 +42,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 import carouselList from "../data/carouselList";
 import Button from "../components/Button.component";
 
@@ -99,7 +105,7 @@ export default {
       const button = document.querySelector("#buy-now");
       const img = document.querySelector(".carousel_img");
       const span = document.querySelector(".carousel_content-price");
-      const h1 = document.querySelector("h1");
+      const h1 = document.querySelector(".title");
       const p = document.querySelector("p");
 
       if (!!img && !!button && !!span && !!h1 && !!p) {
@@ -115,7 +121,7 @@ export default {
       const button = document.querySelector("#buy-now");
       const img = document.querySelector(".carousel_img");
       const span = document.querySelector(".carousel_content-price");
-      const h1 = document.querySelector("h1");
+      const h1 = document.querySelector(".title");
       const p = document.querySelector("p");
 
       if (!!img && !!button && !!span && !!h1 && !!p) {
@@ -126,11 +132,13 @@ export default {
         p.classList.add("from-left");
       }
     },
+
+    ...mapMutations(["shouldShowForm"]),
   },
 };
 </script>
 
-<style>
+<style scoped>
 #carousel {
   position: relative;
   width: 100vw;

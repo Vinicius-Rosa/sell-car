@@ -1,6 +1,6 @@
 <template>
-  <div class="modal">
-    <div class="contact-form">
+  <div class="modal" :hidden="!showForm" @click="close">
+    <div class="contact-form from-left">
       <h1>Fale conosco</h1>
 
       <div class="input-box">
@@ -27,7 +27,24 @@
 </template>
 
 <script>
-export default {};
+import { mapState, mapMutations } from "vuex";
+
+export default {
+  name: "Contact",
+  computed: {
+    ...mapState({
+      showForm: (state) => state.showForm,
+    }),
+  },
+
+  methods: {
+    close(e) {
+      const thisItem = document.querySelector(".modal");
+      if (e.target === thisItem) this.shouldHideForm();
+    },
+    ...mapMutations(["shouldHideForm"]),
+  },
+};
 </script>
 
 <style scoped>
