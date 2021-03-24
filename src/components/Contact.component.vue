@@ -19,7 +19,7 @@
       </div>
 
       <div class="input-box">
-        <span>Email:</span>
+        <span>Telefone:</span>
         <input type="text" />
       </div>
     </div>

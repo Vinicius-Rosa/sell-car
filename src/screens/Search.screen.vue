@@ -74,13 +74,16 @@
             <span>{{ item.km }}Km</span>
           </div>
         </div>
-        <button class="buy-now">Entrar em contato!</button>
+        <button class="buy-now" @click="shouldShowForm">
+          Entrar em contato!
+        </button>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 import fetch from "../services/announcements";
 
 export default {
@@ -124,6 +127,8 @@ export default {
     toggleFilters() {
       this.hideFilters = !this.hideFilters;
     },
+
+    ...mapMutations(["shouldShowForm"]),
   },
 };
 </script>

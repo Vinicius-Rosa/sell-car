@@ -12,7 +12,7 @@
       <Button
         id="buy-now"
         classname="from-left"
-        text="Compre já"
+        text="Garanta já"
         :onclick="shouldShowForm"
       />
     </div>
