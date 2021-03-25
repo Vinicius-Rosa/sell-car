@@ -1,6 +1,7 @@
 
 const state = {
-    showForm: false
+    showForm: false,
+    selectedItem: null
 }
 
 const mutations = {
@@ -10,6 +11,10 @@ const mutations = {
 
     shouldHideForm: state => {
         state.showForm = false;
+    },
+
+    setSelectedItem: (state, value) => {
+        state.selectedItem = value;
     },
 }
 

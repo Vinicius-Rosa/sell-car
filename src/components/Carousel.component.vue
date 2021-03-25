@@ -13,7 +13,7 @@
         id="buy-now"
         classname="from-left"
         text="Garanta já"
-        :onclick="shouldShowForm"
+        :onclick="seeMore"
       />
     </div>
 
@@ -42,7 +42,6 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
 import carouselList from "../data/carouselList";
 import Button from "../components/Button.component";
 
@@ -133,7 +132,9 @@ export default {
       }
     },
 
-    ...mapMutations(["shouldShowForm"]),
+    seeMore() {
+      this.$router.push("/search");
+    },
   },
 };
 </script>

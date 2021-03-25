@@ -74,7 +74,7 @@
             <span>{{ item.km }}Km</span>
           </div>
         </div>
-        <button class="buy-now" @click="shouldShowForm">
+        <button class="buy-now" @click="handleContact(item.id)">
           Entrar em contato!
         </button>
       </div>
@@ -128,7 +128,12 @@ export default {
       this.hideFilters = !this.hideFilters;
     },
 
-    ...mapMutations(["shouldShowForm"]),
+    handleContact(id) {
+      this.setSelectedItem(id);
+      this.shouldShowForm();
+    },
+
+    ...mapMutations(["shouldShowForm", "setSelectedItem"]),
   },
 };
 </script>
